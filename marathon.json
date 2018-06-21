@@ -1,0 +1,20 @@
+{
+  "id": "/jenkins-test",
+  "instances": 2,
+  "cpus": 1,
+  "mem": 1024,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "redis:3",
+      "network": "BRIDGE",
+      "forcePullImage": true
+    }
+  },
+  "env": {
+    "REDIS_HOST": "redis.marathon.l4lb.thisdcos.directory",
+    "REDIS_PORT": "10107",
+    "DETECTION_Q_NAME": "det",
+    "DET_MODEL_URL": "/opt/rqdetection/retina_deepfashion.h5"
+  }
+}
